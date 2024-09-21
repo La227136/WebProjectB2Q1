@@ -1,0 +1,70 @@
+### GET request with a header
+GET http://localhost:3000/haircutter/4
+Accept: application/json
+
+### GET request with login page
+GET http://localhost:3000/modifyPage
+Accept: aplication/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQWRtaW5pc3RYXRvciIsImlhdCI6MTcwNDIwNzc4OCwiZXhwIjoxNzA0MjA5NTg4fQ.aL3u3wvAIniJYlFTVsDoJdyvFbMNPb3sBmgUvD4e4AA
+
+
+### POST request with login page
+POST http://localhost:4000/login
+host: localhost:4000/login
+content-type: application/json
+
+{
+  "login": "admin@admin.com",
+  "password": "123"
+}
+
+### POST request to create admin
+POST http://localhost:3000/signup
+host: localhost:3000/signup
+content-type: application/json
+
+{
+  "login": "admin@admin.com",
+  "password": "123"
+}
+
+### POST remake access token
+POST http://localhost:4000/token
+host: localhost:4000/token
+Content-Type: application/json
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW5AYWRtaW4uY29tIiwiaWF0IjoxNzA0NTg3MDIyfQ.gWT4N53NBPLdXzmNfCeCv-i22zsvEl7VSYzMeDj6LyM"
+}
+
+### DELETE request to logout
+DELETE http://localhost:4000/logout
+host: localhost:4000/logout
+Content-Type: application/json
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQWRtaW5pc3RyYXRvciIsImlhdCI6MTcwNDM4MDY5N30.19huHk1m9ixGbVMBQUDp0T-TLQOGWU7CMx4jVuzSBig"
+}
+
+
+### GET to check if user is admin
+GET http://localhost:3000/isAdmin
+host: localhost:4000/isAdmin
+Content-Type: application/json
+Authorization: Bearer
+
+###POST to create a new haircutter
+POST http://localhost:3000/addHairdresser
+host: localhost:3000/addHairdresser
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW5AYWRtaW4uY29tIiwiaWF0IjoxNzA0NTc4MDk5LCJleHAiOjE3MDQ1ODE2OTl9.TQU5ZLbdcoazlPpKKDFbsDplseXq0vO7W0yJP9yGZis
+
+{
+  "name": "azerty",
+  "number": "123456789",
+  "street": "test",
+  "zipCode": "12345",
+  "city": "test",
+  "longitude": "11",
+  "latitude": "11"
+}

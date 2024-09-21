@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coiff'eur</title>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="panel.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+<header>
+    <h3>Coiff'EUR</h3>
+    <div class="iconsContainers">
+        <img src="Illustrations/AddUserIcon.svg" class="addUserIconCLASS" onclick="addHairdresserInterface()">
+        <img src="Illustrations/LoginIcon.svg" class="loginIconCLASS" onclick="GoToLoginPage()">
+        <img src="Illustrations/LogoutIcon.svg" id="logoutButtonID" class="logoutButtonCLASS" onclick="Logout()">
+    </div>
+</header>
+
+    <div id="mainContentID" class="mainContentCLASS">
+        <span class="closeButton">
+            <img src="Illustrations/CloseCrossIcon.svg" id="closeButtonImg" class="closeButtonImgCLASS start" onclick="closePanel()">
+        </span>
+        <input type="text" id="searchBarID"class="searchBar" placeholder="Rechercher...">
+        <label for="searchBarID" id="searchBarLabel"></label>
+        <div id="hairdressersContainerID" class ="hairdressersContainerCLASS">
+            <template id="hairdresserTemplateID">
+                <div id="hairdresserID" class="hairdresserCLASS">
+                    <p class="nameCLASS"></p>
+                    <p class="streetCLASS"></p>
+                    <p class="cityCLASS"></p>
+                    <p class="indexOrderCLASS"></p>
+                </div>
+            </template>
+        </div>
+        <div class="LoadingContainerCLASS">
+            <button onclick="loadHairdressers()" class="LoadingCLASS" id="observerBtnID">Charger plus...</button>
+        </div>
+    </div>
+
+    <div id="slidingPanelID" class="slidingPanelCLASS hidden displayNone">
+        <div class="containerDetailsCLASS">
+
+            <form class="detailsFormCLASS">
+                <div class="detailsTextCLASS" id="detailsTextID">
+
+                    <div class="inputGroup">
+                        <label for="nameInputID" class="detailsLabel"><b>Nom</b></label>
+                        <input type="text" id="nameInputID" class="detailsInputCLASS" name="name">
+                    </div>
+
+                    <div class="inputGroup">
+                        <label for="numberInputID" class="detailsLabel"><b>Numéro</b></label>
+                        <input type="text" id="numberInputID" class="detailsInputCLASS" name="number">
+                    </div>
+
+                    <div class="inputGroup">
+                        <label for="streetInputID" class="detailsLabel"><b>Voie</b></label>
+                        <input type="text" id="streetInputID" class="detailsInputCLASS" name="street">
+                    </div>
+
+                    <div class="inputGroup">
+                        <label for="zipcodeInputID" class="detailsLabel"><b>Code Postal</b></label>
+                        <input type="text" id="zipcodeInputID" class="detailsInputCLASS" name="zipCode">
+                    </div>
+
+                    <div class="inputGroup">
+                        <label for="cityInputID" class="detailsLabel"><b>Ville</b></label>
+                        <input type="text" id="cityInputID" class="detailsInputCLASS" name="city">
+                    </div>
+
+                    <!-- Classes are used to hide when user -->
+                    <div class="inputGroup adminOnly">
+                        <label for="latitudeInputID" class="detailsLabel">Latitude</label>
+                        <input type="number" id="latitudeInputID" class="detailsInputCLASS" name="latitude">
+                    </div>
+
+                    <div class="inputGroup adminOnly">
+                        <label for="longitudeInputID" class="detailsLabel">Longitude</label>
+                        <input type="number" id="longitudeInputID" class="detailsInputCLASS" name="longitude">
+                    </div>
+
+                </div>
+                <div class="buttonContainer" id="buttonContainerID">
+                    <button type="button" id="panelConfirmationBtnID"></button>
+                    <div class="modifyConfirmationCLASS" id="modifyConfirmationID">Coiffeur modifié !</div>
+                </div>
+
+            </form>
+            <div class="mapWrapper">
+                <div class="mapContainerCLASS contentBelowAnimation"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

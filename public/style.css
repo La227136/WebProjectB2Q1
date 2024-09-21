@@ -1,0 +1,257 @@
+body,html{
+    overflow-y: hidden;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+header {
+    display: flex; /* Use flexbox to center content */
+    align-items: center; /* Vertically center content in flex container */
+    height: 10%;
+    width: 100%;
+    background-color: #000;
+    color: white;
+    font-size: 1.5em;
+}
+
+.loginIconCLASS:hover{
+    cursor: pointer;
+    animation: myAnim2 0.5s ease-in 0s 1 normal forwards;
+}
+
+.loginIconCLASS{
+    height: 20px;
+    width: auto;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.logoutButtonCLASS.visible:hover{
+    height: 20px;
+    width: auto;
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    animation: myAnim2 0.5s ease-in 0s 1 normal forwards;
+}
+
+.addUserIconCLASS.visible:hover{
+    height: 20px;
+    width: auto;
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    animation: myAnim2 0.5s ease-in 0s 1 normal forwards;
+}
+
+.addUserIconCLASS{
+    display: none;
+}
+
+header h3{
+    margin-left: 30px;
+}
+
+.iconsContainers {
+    margin-left: auto; /* Push the .icons container to the right */
+    margin-right: 30px;
+    display: flex; /* Use Flexbox to align icons inside */
+    gap:20px
+}
+
+.iconsContainers img {
+    padding: 5px;
+    height: 20px;
+    width: auto;
+}
+
+.mapContainerCLASS.displayNone{
+    display: none;
+}
+
+.searchBar{
+    width: 100%;
+    margin: 15px 0px 2px;
+    border-radius: 10px;
+    height: 5%;
+    box-sizing: border-box;
+    border: white;
+    background-color: #f4f3f4;
+    padding: 10px;
+}
+
+.mainContentCLASS {
+    overflow: auto;
+    width: 96%;
+    transition: width 0.5s;
+    height: 83%;
+    padding: 2%;
+}
+
+.hairdresserCLASS {
+    box-sizing: border-box;
+    padding: 25px;
+    margin-bottom: 20px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.hairdresserCLASS:hover{
+    background-color: #c45ac1;
+    color: #ffffff;
+}
+
+.hairdresserCLASS.selected {
+    background-color: #3c063a;
+    color: #cccccc;
+}
+
+
+.reducedContent{/* Adds a class to manage the width of the main content */
+    width: 46%; /* Reduces width when shutter is open 46% because 4*2% padding so 92% /2 = 46 each*/
+    padding: 2%;
+    overflow-y: auto;
+}
+
+#hairdresserID{
+    position: relative;
+}
+
+.indexOrderCLASS{
+    position: absolute;
+    right: 3%;
+    top: 16%;
+    font-size: 80px;
+    margin: 0;
+    font-weight: bold;
+    color: #f7f5f7;
+}
+
+.nameCLASS{
+    font-size: 20px;
+    margin:0;
+}
+
+.addressCLASS, .cityCLASS{
+    font-size: 15px;
+    margin: 2px;
+}
+
+.detailsLabel{
+    grid-column: 1;
+    text-align: end;
+    padding-right: 30px;
+}
+
+.detailsInputCLASS {
+    grid-column: 2;
+}
+
+.detailsTextCLASS{
+    display: grid;
+}
+
+.hairdresserCLASS:hover .indexOrderCLASS{
+    color: #c85fc5;
+}
+
+.hairdresserCLASS.selected .indexOrderCLASS{
+    color: #430d41;
+}
+
+#searchBarLabel{
+    margin-bottom: 8px;
+    color: lightgray;
+    font-size: 14px;
+}
+
+.logoutButtonCLASS{
+    display: none;
+}
+
+.LoadingCLASS{
+    margin-top: 15px;
+    background-color: #A03782;
+    color: white;
+    border: none; /* No button border */
+    border-radius: 40px;
+    cursor: pointer; /* Change cursor to pointer */
+    padding: 10px 20px;
+}
+
+.LoadingContainerCLASS {
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+    margin-top: 20px; /* Adds a space above the button container */
+    margin-bottom: 20px;
+}
+
+
+@keyframes myAnim2 {
+    0% {
+        background-color: #c45ac1;
+        opacity: 0;
+    }
+
+    100% {
+        background-color: #c45ac1;
+        opacity: 1;
+    }
+}
+
+
+
+
+/* For larger screens, the pane and main content can be split in width */
+@media (min-width: 1024px) {
+    .slidingPanelCLASS {
+        width: 46%;
+        height: 86%;
+    }.reducedContent {
+         width: 46%;
+     }
+}
+
+/* For medium screens, adjust width accordingly */
+@media (min-width: 768px) and (max-width: 1023.99px) {
+    .reducedContent {
+        width: 36%;
+    }
+    .mainContentCLASS{
+        height: 85%;
+    }
+    .slidingPanelCLASS {
+        width: 56%;
+        overflow: auto;
+        height: 87%;
+    }
+}
+
+/* For smaller screens, the shutter takes up more space */
+@media (max-width: 767.99px) {
+    .reducedContent {
+        width: 26%;
+    }
+    .mainContentCLASS{
+        height: 86%;
+    }
+    .slidingPanelCLASS {
+        width: 66%;
+        overflow: auto;
+        height: 88%;
+    }
+}
+
+/* For very small screens, you can choose to have the shutter cover almost the entire screen */
+@media (max-width: 480px) {
+    .reducedContent {
+        width: 18%;
+    }
+    .slidingPanelCLASS {
+        width: 74%;
+    }
+}
