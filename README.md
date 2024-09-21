@@ -1,5 +1,5 @@
 # Groupe02
-Ce projet a été réalisé par Voiturier Matthias et Louis Goovers.
+Ce projet a été réalisé par Louis Goovers et Matthias Voiturier.
 Ce projet est une application web qui répertorie différents coiffeurs français avec diverses informations.
 
 Prérequis -
